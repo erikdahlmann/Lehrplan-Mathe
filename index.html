@@ -97,6 +97,10 @@ header.top{border-bottom:1px solid var(--line);background:var(--card)}
 .uv-titel{flex:1 1 auto;min-width:0}
 .uv-titel .t{display:block;font-weight:700;font-size:1.02rem;line-height:1.3}
 .uv-titel .f{display:block;font-size:.78rem;color:var(--ink-soft);margin-top:2px}
+.uv-opt{display:inline-block;margin-left:8px;font-size:.66rem;font-weight:700;color:var(--ink-soft);
+  background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:1px 8px;vertical-align:middle}
+.opt-note{font-size:.86rem;color:var(--ink-soft);background:var(--paper);border:1px dashed var(--line);
+  border-radius:10px;padding:9px 12px}
 .uv-chev{flex:0 0 auto;width:22px;height:22px;color:var(--ink-soft);transition:transform .22s cubic-bezier(.16,1,.3,1)}
 .uv[data-open="true"] .uv-chev{transform:rotate(180deg)}
 @media (prefers-reduced-motion:reduce){.uv-chev{transition:none}}
@@ -212,7 +216,8 @@ footer strong{color:var(--ink)}
      "Kommunizieren",
      "Problemlösen",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Geometrische Erkundungen - Symmetrie",
@@ -242,7 +247,8 @@ footer strong{color:var(--ink)}
      "Operieren",
      "Argumentieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Rechnen mit System",
@@ -255,7 +261,14 @@ footer strong{color:var(--ink)}
     "sequenzen": [
      "Terme",
      "Rechenvorteile beim Addieren und Multiplizieren",
-     "Ausklammern und Ausmultiplizieren"
+     "Ausklammern und Ausmultiplizieren",
+     "Potenzieren",
+     "Teilbarkeit",
+     "Primzahlen und Primfaktorzerlegung",
+     "Schriftlich addieren und subtrahieren",
+     "Schriftliches Multiplizieren",
+     "Schriftliches Dividieren",
+     "Sachaufgaben systematisch lösen"
     ],
     "kompetenzen": [
      "erläutern Eigenschaften von Primzahlen, zerlegen natürliche Zahlen in Primfaktoren und verwenden dabei die Potenzschreibweise (Ope-4, Arg-4)",
@@ -269,7 +282,8 @@ footer strong{color:var(--ink)}
      "Operieren",
      "Argumentieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Die Welt der Flächen",
@@ -283,7 +297,7 @@ footer strong{color:var(--ink)}
      "Flächeninhalte vergleichen",
      "Flächeneinheiten",
      "Flächeninhalt eines Rechtecks",
-     "Flächeninhalte rechtwinkliger Dreiecke",
+     "Flächeninhalt eines rechtwinkligen Dreiecks",
      "Umfang von Figuren",
      "Schätzen und Rechnen mit Maßstäben"
     ],
@@ -298,7 +312,8 @@ footer strong{color:var(--ink)}
     "prozess": [
      "Operieren",
      "Argumentieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Körper im Raum",
@@ -309,13 +324,12 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Körper und Netze",
-     "Netze von Quadern und Würfeln",
+     "Quader und Würfel",
      "Schrägbilder",
      "Rauminhalte vergleichen",
      "Volumeneinheiten",
      "Volumen eines Quaders",
-     "Oberflächeninhalte von Quadern und Würfeln",
-     "Kürzen und erweitern"
+     "Oberflächeninhalte von Quadern und Würfeln"
     ],
     "kompetenzen": [
      "schätzen Größen, wählen Einheiten von Größen situationsgerecht aus und wandeln sie um (Ope-7)",
@@ -330,7 +344,8 @@ footer strong{color:var(--ink)}
      "Operieren",
      "Modellieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Brüche – die Welt des Ganzen und seiner Teile",
@@ -340,9 +355,17 @@ footer strong{color:var(--ink)}
      "Zahlbereichserweiterung: Positive rationale Zahlen",
      "Darstellung: Zahlenstrahl, Wortform, Bruch, Prozentzahl"
     ],
-    "sequenzen": [],
+    "sequenzen": [
+     "Bruch und Anteil",
+     "Kürzen und erweitern",
+     "Brüche vergleichen",
+     "Prozente",
+     "Brüche als Quotienten",
+     "Brüche auf dem Zahlenstrahl"
+    ],
     "kompetenzen": [],
-    "prozess": []
+    "prozess": [],
+    "optional": "Optionales Kapitel im Lambacher Schweizer: kann je nach Zeit in Klasse 5 oder 6 behandelt werden."
    }
   ]
  },
@@ -360,7 +383,11 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Bruch und Anteil",
-     "Kürzen und erweitern"
+     "Kürzen und erweitern",
+     "Brüche vergleichen",
+     "Prozente",
+     "Brüche als Quotienten",
+     "Brüche auf dem Zahlenstrahl"
     ],
     "kompetenzen": [
      "stellen Zahlen auf unterschiedlichen Weisen dar, vergleichen sie und wechseln situationsangemessen zwischen den verschiedenen Darstellungen (Ope-3)",
@@ -371,7 +398,8 @@ footer strong{color:var(--ink)}
     "prozess": [
      "Operieren",
      "Modellieren"
-    ]
+    ],
+    "optional": "Optionales Kapitel im Lambacher Schweizer: kann je nach Zeit in Klasse 5 oder 6 behandelt werden."
    },
    {
     "thema": "Brüche in Dezimalschreibweise",
@@ -393,7 +421,8 @@ footer strong{color:var(--ink)}
     ],
     "prozess": [
      "Operieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Rationale Zahlen addieren und subtrahieren",
@@ -402,7 +431,10 @@ footer strong{color:var(--ink)}
      "Grundrechenarten: Addition und Subtraktion einfacher Brüche und endlicher Dezimalzahlen"
     ],
     "sequenzen": [
-     "Brüche addieren und subtrahieren"
+     "Brüche addieren und subtrahieren",
+     "Dezimalzahlen addieren und subtrahieren",
+     "Geschicktes Rechnen mit Brüchen und Dezimalzahlen",
+     "Addieren und Subtrahieren von Größen"
     ],
     "kompetenzen": [
      "runden Zahlen im Kontext sinnvoll und wenden Überschlag und Probe als Kontrollstrategien an (Ope-7)",
@@ -411,7 +443,8 @@ footer strong{color:var(--ink)}
     "prozess": [
      "Operieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Muster und Figuren - Geometrische Abbildungen",
@@ -421,7 +454,12 @@ footer strong{color:var(--ink)}
      "Abbildungen: Verschiebungen, Drehungen, Punkt- und Achsenspiegelungen"
     ],
     "sequenzen": [
-     "Spiegelungen im erweiterten Koordinatensystem"
+     "Negative Zahlen – erweitertes Koordinatensystem",
+     "Verschiebungen",
+     "Kreise und Kreisfiguren",
+     "Winkel",
+     "Winkel mit dem Geodreieck messen und zeichnen",
+     "Drehungen"
     ],
     "kompetenzen": [
      "zeichnen ebene Figuren unter Verwendung angemessener Hilfsmittel wie Zirkel, Lineal, Geodreieck oder dynamische Geometriesoftware (Ope-9)",
@@ -435,7 +473,8 @@ footer strong{color:var(--ink)}
     "prozess": [
      "Operieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Rationale Zahlen multiplizieren und dividieren",
@@ -444,7 +483,13 @@ footer strong{color:var(--ink)}
      "Grundrechenarten: Multiplikation und Division einfacher Brüche und endlicher Dezimalzahlen, schriftliche Division"
     ],
     "sequenzen": [
-     "Brüche vervielfachen und teilen"
+     "Brüche vervielfachen und teilen",
+     "Brüche multiplizieren",
+     "Durch Brüche dividieren",
+     "Kommaverschiebung",
+     "Dezimalzahlen multiplizieren",
+     "Dezimalzahlen dividieren",
+     "Rechengesetze – Vorteile beim Rechnen"
     ],
     "kompetenzen": [
      "begründen mithilfe von Rechengesetzen Strategien zum vorteilhaften Rechnen und nutzen diese (Ope-4, Arg-5).",
@@ -455,7 +500,8 @@ footer strong{color:var(--ink)}
      "Operieren",
      "Argumentieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Daten",
@@ -464,7 +510,10 @@ footer strong{color:var(--ink)}
      "Statistische Daten: Datenerhebung, Ur- und Strichlisten, Klasseneinteilung, Säulen- und Kreisdiagramme, Boxplots, relative und absolute Häufigkeit, Kenngrößen (arithmetisches Mittel, Median, Spannweite, Quartile)"
     ],
     "sequenzen": [
-     "Relative Häufigkeiten und Diagramme"
+     "Relative Häufigkeiten und Diagramme",
+     "Median und arithmetisches Mittel",
+     "Boxplots",
+     "Untersuchungen planen und auswerten"
     ],
     "kompetenzen": [
      "erheben Daten, fassen sie in Ur- und Strichlisten zusammen und bilden geeignete Klasseneinteilungen (Mod-3)",
@@ -477,7 +526,8 @@ footer strong{color:var(--ink)}
      "Modellieren",
      "Operieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Strukturen erkennen und beschreiben",
@@ -487,7 +537,10 @@ footer strong{color:var(--ink)}
      "Zahlbereichserweiterung: ganze Zahlen"
     ],
     "sequenzen": [
-     "Strukturen erkennen und fortsetzen"
+     "Strukturen erkennen und fortsetzen",
+     "Abhängigkeiten mit Termen beschreiben",
+     "Rechnen mit dem Dreisatz",
+     "Abhängigkeiten grafisch darstellen"
     ],
     "kompetenzen": [
      "nutzen Variablen bei der Formulierung von Rechengesetzen und bei der Beschreibung von einfachen Sachzusammenhängen (Ope-5)",
@@ -501,7 +554,8 @@ footer strong{color:var(--ink)}
      "Operieren",
      "Modellieren",
      "Problemlösen"
-    ]
+    ],
+    "optional": ""
    }
   ]
  },
@@ -519,9 +573,9 @@ footer strong{color:var(--ink)}
     "sequenzen": [
      "Ganze Zahlen",
      "Rationale Zahlen und ihre Anordnung",
-     "Addieren und Subtrahieren positiver Zahlen",
-     "Addieren und Subtrahieren negativer Zahlen",
-     "Multiplizieren und dividieren rationaler Zahlen",
+     "Positive Zahlen addieren und subtrahieren",
+     "Negative Zahlen addieren und subtrahieren",
+     "Multiplizieren und Dividieren rationaler Zahlen",
      "Rechenvorteile nutzen"
     ],
     "kompetenzen": [
@@ -534,7 +588,8 @@ footer strong{color:var(--ink)}
      "Problemlösen",
      "Modellieren",
      "Argumentieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Zuordnungen",
@@ -546,7 +601,8 @@ footer strong{color:var(--ink)}
      "Zuordnungen darstellen",
      "Zuordnungen mit Formeln beschreiben",
      "Proportionale Zuordnungen",
-     "Antiproportionale Zuordnungen"
+     "Antiproportionale Zuordnungen",
+     "Zuordnungstypen erkennen und nutzen"
     ],
     "kompetenzen": [
      "deuten Variablen als Veränderliche zur Beschreibung von Zuordnungen (…) (Mod-4, Mod-5, Pro-4)",
@@ -562,7 +618,8 @@ footer strong{color:var(--ink)}
      "Kommunizieren",
      "Argumentieren",
      "Operieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Prozent und Zinsrechnung",
@@ -572,6 +629,8 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Prozentsätze berechnen",
+     "Prozentwerte berechnen",
+     "Grundwerte berechnen",
      "Überall Prozente",
      "Zinsen",
      "Zinseszinsen"
@@ -585,7 +644,8 @@ footer strong{color:var(--ink)}
      "Problemlösen",
      "Operieren",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Terme und Gleichungen",
@@ -596,6 +656,11 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Terme mit einer Variablen",
+     "Terme mit einer Variablen umformen",
+     "Ausmultiplizieren und Ausklammern",
+     "Gleichungen aufstellen und lösen",
+     "Gleichungen mit Äquivalenzumformungen lösen",
+     "Bruchterme und Bruchgleichungen",
      "Problemlösen mit Gleichungen"
     ],
     "kompetenzen": [
@@ -610,7 +675,8 @@ footer strong{color:var(--ink)}
      "Problemlösen",
      "Kommunizieren",
      "Operieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Konstruieren und Argumentieren",
@@ -620,7 +686,11 @@ footer strong{color:var(--ink)}
      "Konstruktion: Dreiecke"
     ],
     "sequenzen": [
-     "Winkel an sich schneidenden Geraden"
+     "Winkel an sich schneidenden Geraden",
+     "Winkelsummen",
+     "Dreiecke konstruieren",
+     "Kongruenz",
+     "Mit Kongruenzsätzen argumentieren"
     ],
     "kompetenzen": [
      "nutzen geometrische Sätze zur Winkelbestimmung in ebenen Figuren (Arg-7, Arg-9, Arg-10)",
@@ -635,7 +705,8 @@ footer strong{color:var(--ink)}
      "Problemlösen",
      "Operieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Daten und Wahrscheinlichkeit",
@@ -646,7 +717,10 @@ footer strong{color:var(--ink)}
      "Begriffsbildung: Ereignis, Ergebnis, Wahrscheinlichkeit"
     ],
     "sequenzen": [
-     "Wahrscheinlichkeiten schätzen"
+     "Wahrscheinlichkeit",
+     "Laplace-Wahrscheinlichkeit – Summenregel",
+     "Baumdiagramm und Pfadregel",
+     "Der richtige Blick auf das Baumdiagramm"
     ],
     "kompetenzen": [
      "schätzen Wahrscheinlichkeiten auf der Basis von Hypothesen sowie auf der Basis relativer Häufigkeiten langer Versuchsreihen ab (Mod-8, Pro-3)",
@@ -661,7 +735,8 @@ footer strong{color:var(--ink)}
      "Operieren",
      "Argumentieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    }
   ]
  },
@@ -677,7 +752,7 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Funktionen",
-     "Funktionen der Gleichung y=mx",
+     "Funktionen mit der Gleichung y = m·x",
      "Lineare Funktionen",
      "Funktionsgleichungen bestimmen",
      "Nullstellen und Schnittpunkte"
@@ -695,7 +770,8 @@ footer strong{color:var(--ink)}
      "Modellieren",
      "Operieren",
      "Problemlösen"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Terme mit mehreren Variablen",
@@ -706,6 +782,8 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Wiederholung: Terme mit einer Variablen",
+     "Terme mit mehreren Variablen",
+     "Multiplizieren von Summen",
      "Binomische Formeln"
     ],
     "kompetenzen": [
@@ -720,7 +798,8 @@ footer strong{color:var(--ink)}
      "Modellieren",
      "Problemlösen",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Flächen",
@@ -729,7 +808,9 @@ footer strong{color:var(--ink)}
      "Flächeninhalt: Dreieck, Parallelogramm, Trapez, zusammengesetzte Figuren, Höhe und Grundseite"
     ],
     "sequenzen": [
-     "Flächeninhalte von Parallelogrammen"
+     "Flächeninhalte von Parallelogrammen",
+     "Flächeninhalte von Dreiecken",
+     "Flächeninhalte zusammengesetzter Figuren"
     ],
     "kompetenzen": [
      "stellen Terme (…) zur Berechnung von Flächeninhalten und Volumina auf (Mod-4, Mod-6, Kom-1)",
@@ -742,7 +823,8 @@ footer strong{color:var(--ink)}
      "Kommunizieren",
      "Operieren",
      "Problemlösen"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Lineare Gleichungssysteme",
@@ -751,7 +833,11 @@ footer strong{color:var(--ink)}
      "Lösungsverfahren: algebraische und grafische Lösungsverfahren (lineare Gleichungssysteme mit zwei Variablen)"
     ],
     "sequenzen": [
-     "Lineare Gleichungen mit zwei Variablen"
+     "Lineare Gleichungen mit zwei Variablen",
+     "Lineare Gleichungssysteme",
+     "Gleichsetzungs- und Einsetzungsverfahren",
+     "Das Additionsverfahren",
+     "Probleme mit Gleichungssystemen lösen"
     ],
     "kompetenzen": [
      "deuten Variablen (…) als Platzhalter in Termen und Rechengesetzen sowie als Unbekannte in Gleichungen und Gleichungssystemen (Mod-4, Mod-5, Pro-4)",
@@ -762,7 +848,8 @@ footer strong{color:var(--ink)}
      "Modellieren",
      "Problemlösen",
      "Operieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Kreise und Dreiecke",
@@ -772,7 +859,10 @@ footer strong{color:var(--ink)}
      "Konstruktion: Mittelsenkrechte, Seitenhalbierende, Winkelhalbierende, Inkreis, Umkreis, Thaleskreis und Schwerpunkt"
     ],
     "sequenzen": [
-     "Der Satz des Thales"
+     "Der Satz des Thales",
+     "Mittelsenkrechte und Umkreis",
+     "Winkelhalbierende und Inkreis",
+     "Schwerpunkt eines Dreiecks"
     ],
     "kompetenzen": [
      "begründen die Beweisführung (…) zum Satz des Thales (Pro-10, Arg-8)",
@@ -785,7 +875,8 @@ footer strong{color:var(--ink)}
      "Argumentieren",
      "Operieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    }
   ]
  },
@@ -807,7 +898,7 @@ footer strong{color:var(--ink)}
      "Quadratwurzeln",
      "Wurzeln näherungsweise bestimmen",
      "Irrationale Zahlen",
-     "Geschickt mit Wurzeln rechnen"
+     "Wurzelgesetze – Vorteile beim Rechnen"
     ],
     "kompetenzen": [
      "unterscheiden rationale und irrationale Zahlen und geben Beispiele für irrationale Zahlen an (Arg-2, Kom-3)",
@@ -820,7 +911,8 @@ footer strong{color:var(--ink)}
      "Kommunizieren",
      "Operieren",
      "Problemlösen"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Quadratische Funktionen",
@@ -830,7 +922,11 @@ footer strong{color:var(--ink)}
      "faktorisierte Form), Graph, Tabelle, Scheitelpunkt, Symmetrie, \tÖffnung, Nullstellen und y- Achsenabschnitt, Transformation der \tNormalparabel, Extremwertprobleme"
     ],
     "sequenzen": [
-     "Wiederholung: Lineare Funktionen"
+     "Wiederholung: Lineare Funktionen",
+     "Quadratische Funktionen vom Typ f(x) = a·x²",
+     "Scheitelpunktform quadratischer Funktionen",
+     "Normalform und quadratische Ergänzung",
+     "Aufstellen quadratischer Funktionsgleichungen"
     ],
     "kompetenzen": [
      "stellen Funktionen mit eigenen Worten, in Wertetabellen, als Graphen und als Terme dar (Kom-4, Kom-6, Kom-7)",
@@ -848,7 +944,8 @@ footer strong{color:var(--ink)}
      "Argumentieren",
      "Operieren",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Kreise, Prismen und Zylinder",
@@ -860,8 +957,10 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Kreisumfang und Kreisfläche",
+     "Kreisteile",
      "Flächen bei Prismen und Zylindern",
-     "Prismen und Zylinder: Volumen"
+     "Prismen und Zylinder – Volumen",
+     "Das Prinzip von Cavalieri"
     ],
     "kompetenzen": [
      "berechnen Längen und Flächeninhalte an Kreisen und Kreissektoren (Ope-8; Ope-9)",
@@ -877,7 +976,8 @@ footer strong{color:var(--ink)}
      "Kommunizieren",
      "Problemlösen",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Potenzen und Potenzgesetze",
@@ -887,7 +987,12 @@ footer strong{color:var(--ink)}
      "Gesetze und Regeln: Potenzgesetze"
     ],
     "sequenzen": [
-     "Potenzen mit ganzzahligen Exponenten"
+     "Potenzen mit ganzzahligen Exponenten",
+     "Zahlen mit Zehnerpotenzen schreiben",
+     "Potenzen mit gleicher Basis",
+     "Potenzen mit gleichen Exponenten",
+     "Potenzieren von Potenzen",
+     "Potenzen mit rationalen Exponenten"
     ],
     "kompetenzen": [
      "stellen Zahlen in Zehnerpotenzschreibweise dar (Ope-1, Ope-6)",
@@ -898,7 +1003,8 @@ footer strong{color:var(--ink)}
     "prozess": [
      "Operieren",
      "Kommunizieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Der Satz des Pythagoras und Berechnungen in Körpern",
@@ -910,6 +1016,8 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Der Satz des Pythagoras",
+     "Pythagoras in Figuren und Körpern",
+     "Pyramiden",
      "Kegel",
      "Kugeln"
     ],
@@ -924,7 +1032,8 @@ footer strong{color:var(--ink)}
      "Operieren",
      "Problemlösen",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Daten und Wahrscheinlichkeit",
@@ -936,6 +1045,8 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Statistiken verstehen und beurteilen",
+     "Vierfeldertafel – mit Anteilen argumentieren",
+     "Bedingte Wahrscheinlichkeiten",
      "Stochastische Unabhängigkeit"
     ],
     "kompetenzen": [
@@ -952,7 +1063,8 @@ footer strong{color:var(--ink)}
      "Argumentieren",
      "Modellieren",
      "Problemlösen"
-    ]
+    ],
+    "optional": "Optionales Kapitel im Lambacher Schweizer: kann je nach Zeit in Klasse 9 oder 10 behandelt werden."
    }
   ]
  },
@@ -987,7 +1099,8 @@ footer strong{color:var(--ink)}
      "Argumentieren",
      "Modellieren",
      "Problemlösen"
-    ]
+    ],
+    "optional": "Optionales Kapitel im Lambacher Schweizer: kann je nach Zeit in Klasse 9 oder 10 behandelt werden."
    },
    {
     "thema": "Quadratische Funktionen und Gleichungen",
@@ -997,12 +1110,12 @@ footer strong{color:var(--ink)}
      "quadratische Funktionen: Term (Normalform, Scheitelpunktform, faktorisierte Form), Graph, Tabelle, Scheitelpunkt, Symmetrie, Öffnung, Nullstellen und y- Achsenabschnitt, Transformation der Normalparabel, Extremwertprobleme"
     ],
     "sequenzen": [
-     "Wiederholung: Quadratische Funktionen",
+     "Darstellungsformen quadratischer Funktionen",
      "Quadratische Gleichungen grafisch lösen",
      "Lösen einfacher quadratischer Gleichungen",
      "Linearfaktorzerlegung",
      "Lösungsformel für quadratische Gleichungen",
-     "Probleme systematisch lösen"
+     "Problemlösen mit quadratischen Gleichungen"
     ],
     "kompetenzen": [
      "stellen Funktionen mit eigenen Worten, in Wertetabellen, als Graphen und als Terme dar (Kom-4, Kom-6, Kom-7)",
@@ -1022,7 +1135,8 @@ footer strong{color:var(--ink)}
      "Argumentieren",
      "Operieren",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Ähnlichkeit",
@@ -1032,7 +1146,7 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Zentrische Streckung",
-     "Ähnlichkeiten",
+     "Ähnlichkeit",
      "Strahlensätze"
     ],
     "kompetenzen": [
@@ -1044,7 +1158,8 @@ footer strong{color:var(--ink)}
      "Operieren",
      "Problemlösen",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Exponentialfunktionen",
@@ -1055,9 +1170,9 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Exponentielles Wachstum",
-     "Exponentielle Wachstumsmodelle",
+     "Exponentialfunktionen",
      "Exponentialgleichungen und Logarithmen",
-     "Vergleich von linearem, quadratischem und exponentiellem Wachstum – Modellieren"
+     "Wachstumsprozesse modellieren"
     ],
     "kompetenzen": [
      "lösen Exponentialgleichungen näherungsweise durch Probieren, durch Logarithmieren sowie mit digitalen Mathematikwerkzeugen (Pro-5, Ope-12)",
@@ -1079,7 +1194,8 @@ footer strong{color:var(--ink)}
      "Modellieren",
      "Kommunizieren",
      "Argumentieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Trigonometrie",
@@ -1089,7 +1205,7 @@ footer strong{color:var(--ink)}
      "Trigonometrie: Sinus, Kosinus, Tangens"
     ],
     "sequenzen": [
-     "Sinus und Kosinus im rechtwinkligen Dreieck",
+     "Sinus und Kosinus",
      "Tangens",
      "Probleme lösen mit rechtwinkligen Dreiecken",
      "Der Kosinussatz"
@@ -1106,7 +1222,8 @@ footer strong{color:var(--ink)}
      "Kommunizieren",
      "Operieren",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    },
    {
     "thema": "Trigonometrische Funktionen",
@@ -1116,8 +1233,9 @@ footer strong{color:var(--ink)}
     ],
     "sequenzen": [
      "Sinus und Kosinus am Einheitskreis",
-     "Sinus- und Kosinus-Funktion",
-     "Periodische Vorgänge – Modellieren"
+     "Die Sinusfunktion",
+     "Transformationen der Sinusfunktion",
+     "Beschreibung periodischer Vorgänge"
     ],
     "kompetenzen": [
      "stellen Funktionen mit eigenen Worten, in Wertetabellen, als Graphen und als Terme dar (Kom-4, Kom-6, Kom-7)",
@@ -1137,7 +1255,8 @@ footer strong{color:var(--ink)}
      "Argumentieren",
      "Operieren",
      "Modellieren"
-    ]
+    ],
+    "optional": ""
    }
   ]
  },
@@ -2210,10 +2329,11 @@ function render(){
     return `<article class="uv" data-open="false" style="--feld:var(--${fi.farbe});--feld-soft:var(--${fi.farbe}-soft)">
       <button class="uv-head" type="button" aria-expanded="false">
         <span class="uv-num">${ROMAN[i]||i+1}</span>
-        <span class="uv-titel"><span class="t">${esc(uv.thema)}</span><span class="f">${esc(fi.name)}</span></span>
+        <span class="uv-titel"><span class="t">${esc(uv.thema)}${uv.optional?`<span class="uv-opt">optional</span>`:""}</span><span class="f">${esc(fi.name)}</span></span>
         <svg class="uv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <div class="uv-body"><div class="uv-body-inner"><div class="uv-content">
+        ${uv.optional?`<p class="opt-note">${esc(uv.optional)}</p>`:""}
         ${seqChips?`<div><h4>Darum geht es im Unterricht</h4><div class="chips">${seqChips}</div></div>`:""}
         ${lernItems?`<div><h4>Das lernen die Schüler*innen</h4><ul class="lernen">${lernItems}</ul></div>`:""}
         ${proz?`<div><h4>So wird gearbeitet</h4><div class="prozess">${proz}</div></div>`:""}
