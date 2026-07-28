@@ -20,6 +20,8 @@
   --yellow-soft:#fdf3d7;
   --green:#3d8f6f;
   --green-soft:#e2f1ea;
+  --violet:#6b5b9a;
+  --violet-soft:#eae6f3;
   --radius:14px;
   --shadow:0 1px 2px rgba(60,50,30,.06),0 8px 24px rgba(60,50,30,.07);
 }
@@ -88,10 +90,17 @@ header.top{border-bottom:1px solid var(--line);background:var(--card)}
 
 /* ---------- UV-Karten ---------- */
 .uv-list{display:flex;flex-direction:column;gap:14px;padding-bottom:56px}
-.uv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;border-left:6px solid var(--feld,var(--orange))}
+.uv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  border-left:6px solid var(--feld,var(--orange));transition:box-shadow .18s,border-color .18s}
+.uv:hover{box-shadow:var(--shadow)}
+.uv[data-open="true"]{box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--feld,var(--orange)) 38%,var(--line))}
+@media (prefers-reduced-motion:reduce){.uv{transition:none}}
 .uv-head{display:flex;align-items:center;gap:16px;width:100%;appearance:none;border:0;background:transparent;
   font-family:inherit;text-align:left;padding:16px 18px;cursor:pointer;color:var(--ink)}
 .uv-head:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.uv-head:hover .uv-num{transform:scale(1.06)}
+.uv-num{transition:transform .18s cubic-bezier(.16,1,.3,1)}
+@media (prefers-reduced-motion:reduce){.uv-num{transition:none}}
 .uv-num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:.95rem;background:var(--feld-soft,var(--orange-soft));color:var(--ink)}
 .uv-titel{flex:1 1 auto;min-width:0}
@@ -365,7 +374,7 @@ footer strong{color:var(--ink)}
     ],
     "kompetenzen": [],
     "prozess": [],
-    "optional": "Optionales Kapitel im Lambacher Schweizer: kann je nach Zeit in Klasse 5 oder 6 behandelt werden."
+    "optional": "Optionales Kapitel im Lambacher Schweizer: kann je nach Zeit in Klasse 5 oder 6 behandelt werden. Die zugehörigen Kompetenzerwartungen sind beim gleichnamigen Vorhaben in Klasse 6 aufgeführt."
    }
   ]
  },
@@ -2223,36 +2232,47 @@ footer strong{color:var(--ink)}
 const DATA = JSON.parse(document.getElementById("lehrplan-daten").textContent);
 
 const STUFEN = ["5","6","7","8","9","10","EF","Q1","Q2"];
+/* Farbe und Untertitel folgen dem Schulabschnitt, nicht dem Zufall */
 const TILE = {
-  "5":"var(--orange)","6":"var(--yellow)","7":"var(--blue)","8":"var(--green)",
-  "9":"var(--orange)","10":"var(--blue)","EF":"var(--yellow)","Q1":"var(--green)","Q2":"var(--orange)"
+  "5":"var(--orange)","6":"var(--orange)",
+  "7":"var(--blue)","8":"var(--blue)","9":"var(--blue)","10":"var(--blue)",
+  "EF":"var(--green)","Q1":"var(--green)","Q2":"var(--green)"
 };
-const SUB = {"5":"Klasse","6":"Klasse","7":"Klasse","8":"Klasse","9":"Klasse","10":"Klasse",
+const SUB = {"5":"Erprobungsstufe","6":"Erprobungsstufe",
+             "7":"Mittelstufe","8":"Mittelstufe","9":"Mittelstufe","10":"Mittelstufe",
              "EF":"Einführungsphase","Q1":"Qualifikationsphase","Q2":"Abiturjahr"};
 
 const INTROS = {
-  "5":"Natürliche Zahlen und Grundrechenarten, Symmetrie und Flächen, dazu erste Daten und Diagramme.",
-  "6":"Brüche und Dezimalzahlen, Winkel und geometrische Abbildungen, erste Wahrscheinlichkeiten.",
-  "7":"Rationale Zahlen, Zuordnungen, Prozent- und Zinsrechnung, Terme und Gleichungen, Geometrie am Dreieck.",
-  "8":"Lineare Funktionen, Terme mit mehreren Variablen, lineare Gleichungssysteme, dazu Flächen, Kreise und Dreiecke.",
-  "9":"Quadratische Funktionen und Gleichungen, Satz des Pythagoras, Ähnlichkeit und Wurzeln.",
-  "10":"Potenzen und exponentielles Wachstum, Trigonometrie, Körperberechnungen, Daten und Zufall.",
+  "5":"Zahlen und Größen, Symmetrie, systematisches Rechnen, Flächen und Körper. Die Brüche werden je nach Zeit in Klasse 5 oder 6 behandelt.",
+  "6":"Brüche und Dezimalzahlen und das Rechnen mit ihnen, geometrische Abbildungen und Winkel, Daten sowie erste Beziehungen zwischen Zahlen.",
+  "7":"Rationale Zahlen, Zuordnungen, Prozent- und Zinsrechnung, Terme und Gleichungen, Konstruieren am Dreieck und erste Wahrscheinlichkeiten.",
+  "8":"Lineare Funktionen, Terme mit mehreren Variablen, Flächenberechnung, lineare Gleichungssysteme sowie Kreise und Dreiecke.",
+  "9":"Reelle Zahlen und Wurzeln, quadratische Funktionen, Kreise und Körper, Potenzgesetze, der Satz des Pythagoras und bedingte Wahrscheinlichkeiten.",
+  "10":"Daten und Wahrscheinlichkeit, quadratische Gleichungen, Ähnlichkeit und Strahlensätze, exponentielles Wachstum und Trigonometrie.",
   "EF":"Funktionen systematisch untersuchen, der Ableitungsbegriff, Vektoren und Geraden im Raum.",
-  "Q1":"Analysis von Extremwertproblemen bis zur Integralrechnung, danach analytische Geometrie. Die Inhalte unterscheiden sich nach Kursart.",
-  "Q2":"Stochastik vom Zufallsexperiment bis zur Binomialverteilung, danach die Vorbereitung auf die Abiturprüfung."
+  "Q1":"Analysis von den Extremwertproblemen bis zur Integralrechnung, danach die analytische Geometrie. Die Inhalte unterscheiden sich nach Kursart.",
+  "Q2":"Im Grundkurs zunächst die analytische Geometrie, dann die Stochastik; im Leistungskurs die Stochastik bis zur Normalverteilung. Beide Kurse enden mit der Abiturvorbereitung."
 };
 
 const FELD_FARBEN = [
   {test:/Arithmetik/i, name:"Arithmetik & Algebra", farbe:"orange"},
   {test:/Funktionen und Analysis|^Funktionen/i, name:"Funktionen & Analysis", farbe:"blue"},
-  {test:/Geometrie|Lineare Algebra/i, name:"Geometrie & Lineare Algebra", farbe:"yellow"},
+  {test:/Geometrie|Lineare Algebra/i, name:"Geometrie", farbe:"yellow"},
   {test:/Stochastik/i, name:"Stochastik", farbe:"green"},
-  {test:/./, name:"Alle Inhaltsfelder", farbe:"green"}
+  {test:/Alle Inhaltsfelder/i, name:"Alle Inhaltsfelder", farbe:"violet"}
 ];
-function feldInfo(feld){
-  for(const f of FELD_FARBEN){ if(f.test.test(feld||"")) return f; }
-  return FELD_FARBEN[FELD_FARBEN.length-1];
+/* Ein Vorhaben kann mehrere Inhaltsfelder nennen ("Geometrie, Arithmetik / Algebra").
+   Maßgeblich für Farbe und Reihenfolge ist das ZUERST genannte Feld. */
+function feldListe(feld){
+  const teile=String(feld||"").split(/[;,]/).map(s=>s.trim()).filter(Boolean);
+  const out=[];
+  for(const t of teile){
+    const treffer=FELD_FARBEN.find(f=>f.test.test(t));
+    if(treffer && !out.includes(treffer)) out.push(treffer);
+  }
+  return out.length ? out : [FELD_FARBEN[FELD_FARBEN.length-1]];
 }
+function feldInfo(feld){ return feldListe(feld)[0]; }
 const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
 
 /* Kürzel-Referenzen wie (Ope-3, Kom-5) für die Lese-Ansicht entfernen */
@@ -2264,7 +2284,7 @@ function esc(t){const d=document.createElement("div");d.textContent=t;return d.i
 /* ---------- Legende ---------- */
 const legend = document.getElementById("legend");
 [["Arithmetik & Algebra","orange"],["Funktionen & Analysis","blue"],
- ["Geometrie & Lineare Algebra","yellow"],["Stochastik","green"]].forEach(([n,c])=>{
+ ["Geometrie","yellow"],["Stochastik","green"]].forEach(([n,c])=>{
   const s=document.createElement("span");
   s.innerHTML=`<i style="background:var(--${c})"></i>${n}`;
   legend.appendChild(s);
@@ -2320,7 +2340,10 @@ function render(){
   const intro=`<p class="intro">${esc(INTROS[currentStufe]||"")}</p>`;
 
   const list = uvs.map((uv,i)=>{
-    const fi=feldInfo(uv.inhaltsfeld);
+    const felder=feldListe(uv.inhaltsfeld);
+    const fi=felder[0];
+    /* Originalbezeichnung des Lehrplans zeigen, nur die Trenner vereinheitlichen */
+    const feldLabel=String(uv.inhaltsfeld||fi.name).split(/[;,]/).map(s=>s.trim()).filter(Boolean).join(" · ");
     const lernItems = uv.kompetenzen.map(k=>`<li>${esc(lesbar(k).replace(/^\(\d+\)\s*/,""))}</li>`).join("");
     const seqChips = uv.sequenzen.map(s=>`<span>${esc(s)}</span>`).join("");
     const proz = uv.prozess.map(p=>`<span>${esc(p)}</span>`).join("");
@@ -2329,7 +2352,7 @@ function render(){
     return `<article class="uv" data-open="false" style="--feld:var(--${fi.farbe});--feld-soft:var(--${fi.farbe}-soft)">
       <button class="uv-head" type="button" aria-expanded="false">
         <span class="uv-num">${ROMAN[i]||i+1}</span>
-        <span class="uv-titel"><span class="t">${esc(uv.thema)}${uv.optional?`<span class="uv-opt">optional</span>`:""}</span><span class="f">${esc(fi.name)}</span></span>
+        <span class="uv-titel"><span class="t">${esc(uv.thema)}${uv.optional?`<span class="uv-opt">optional</span>`:""}</span><span class="f">${esc(feldLabel)}</span></span>
         <svg class="uv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <div class="uv-body"><div class="uv-body-inner"><div class="uv-content">
@@ -2383,16 +2406,22 @@ function render(){
 })();
 
 /* ---------- Deep-Link ---------- */
-(function init(){
+function ausHash(){
   const h=(location.hash||"").replace("#","").toLowerCase();
-  let st="5", kurs=null;
   for(const s of STUFEN){
-    if(h===s.toLowerCase()){st=s;break;}
-    if(h===s.toLowerCase()+"-gk"){st=s;kurs="GK";break;}
-    if(h===s.toLowerCase()+"-lk"){st=s;kurs="LK";break;}
+    if(h===s.toLowerCase()) return [s,null];
+    if(h===s.toLowerCase()+"-gk") return [s,"GK"];
+    if(h===s.toLowerCase()+"-lk") return [s,"LK"];
   }
-  select(st,kurs,false);
-})();
+  return ["5",null];
+}
+(function init(){ const [st,kurs]=ausHash(); select(st,kurs,false); })();
+
+/* Vor/Zurück im Browser und von außen gesetzte Links berücksichtigen */
+addEventListener("hashchange",()=>{
+  const [st,kurs]=ausHash();
+  if(st!==currentStufe || (kurs && kurs!==currentKurs)) select(st,kurs,false);
+});
 </script>
 </body>
 </html>
